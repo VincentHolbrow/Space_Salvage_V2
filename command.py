@@ -1,12 +1,28 @@
+'''
+This module contains a function to handle input and several player
+action functions.
+It basically handles everything the player can control.
+'''
+
 import maph
 import entity
+
 
 movedirs = {'n':(0,-1),'s':(0,1),'e':(1,0),'w':(-1,0)}
 playerpos = 0,0
 inventory = []
-entitylist = [entity.Entity((2,0),'abomination'), entity.Entity((0,2), 'raygun')]
+entitylist = [
+    entity.Entity((2,0),'abomination'),
+    entity.Entity((0,2), 'raygun'),
+    entity.Entity((0,1), 'terminal')
+    ]
+
 
 def get_input():
+    '''
+    This function takes input and then triggers player actions
+    based on the given input.
+    '''
     tile = maph.maplayout[playerpos[1]][playerpos[0]]
     print (maph.tiletypes[tile]['desc'])    
     for entity in entitylist:
@@ -27,13 +43,25 @@ def get_input():
     except:
         print(' Error: Invalid action.\n')
 
+
 def move(movedir):
+    '''
+    This function changes the player position, if possible.
+    '''
     global playerpos
     tile = maph.maplayout[playerpos[1]][playerpos[0]]
     if movedir in maph.tiletypes[tile]['exits']:
-        playerpos = playerpos[0]+movedirs[movedir][0], playerpos[1]+movedirs[movedir][1]
+        playerpos = playerpos[0]+movedirs[movedir][0], \
+            playerpos[1]+movedirs[movedir][1]
+    else:
+        print("You can't go that way.")
+
 
 def inspect(obj):
+    '''
+    This functions prints a more detailed description of a given object
+    in the same room as the player.
+    '''
     objfound = False
     for entity in entitylist:
         if entity.name == obj:
@@ -41,8 +69,13 @@ def inspect(obj):
             objfound = True
     if not objfound:
         print(" That doesn't exist in this room.")
-    
+
+
 def grab(obj):
+    '''
+    This function removes an entity from the entity list and adds it to
+    the inventory, if the entity type is 'item'
+    '''
     global entitylist
     objfound = False
     for entity in entitylist:
@@ -57,4 +90,3 @@ def grab(obj):
     if not objfound:
         print(" That doesn't exist in this room.")
 
-    

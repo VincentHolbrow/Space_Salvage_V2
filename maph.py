@@ -1,3 +1,9 @@
+'''
+This module contains a bunch of data for the map, including the layout
+and a bunch of room descriptions.
+'''
+
+
 maplayout = [
     ['0','4','1'],
     ['5','0','5'],
