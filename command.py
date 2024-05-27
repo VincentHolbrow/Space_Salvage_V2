@@ -40,6 +40,9 @@ def get_input():
         if action[0] == 'g':
             obj = input(' Grab what?\n')
             grab(obj)
+        if action[0] == 'u':
+            obj = input(' Use what?\n')
+            use(obj)
     except:
         print(' Error: Invalid action.\n')
 
@@ -90,3 +93,15 @@ def grab(obj):
     if not objfound:
         print(" That doesn't exist in this room.")
 
+
+    def use(obj):
+        objfound = False
+        for entity in inventory:
+            if entity.name == obj and not objfound:
+                entity.func()
+                objfound = True
+        for entity in entitylist:
+            if entity.name == obj and not objfound and entity.pos == \
+            playerpos:
+                entity.func()
+                objfound = True
