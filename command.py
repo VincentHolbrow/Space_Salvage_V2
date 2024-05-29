@@ -43,6 +43,8 @@ def get_input():
         if action[0] == 'u':
             obj = input(' Use what?\n')
             use(obj)
+        if action[0] == 'h':
+            help()
     except:
         print(' Error: Invalid action.\n')
 
@@ -106,3 +108,9 @@ def use(obj):
         playerpos:
             entity.func()
             objfound = True
+
+
+def help():
+    helpblurb = open('helpblurb.txt','r')
+    print(helpblurb.read())
+    helpblurb.close()
