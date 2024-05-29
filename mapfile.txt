@@ -1,0 +1,15 @@
+Initializing map display protocol...
+Complete.
+
+ _____   _____   _____
+|Dock.|_|North|_|Crew |
+| bay  _ Deck  _ Quar.|
+|_   _| |_   _| |_____|
+ _| |_   _| |_
+|Term-| |Cock-|
+|inal | | pit |
+|_   _| |_____|
+ _| |_
+|Armo-|
+| ury |
+|_____|

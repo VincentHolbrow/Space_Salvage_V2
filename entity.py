@@ -58,3 +58,19 @@ class Entity():
         msg = msg + (entitydata[self.name]['desc']) + '\n' +\
               (typedata[self.type])
         return msg
+    
+    def func(self):
+        if self.name == ('raygun'):
+            self.shoot()
+        elif self.name == 'terminal':
+            self.printmap()
+
+    def shoot(self):
+        print('boom!')
+
+    def printmap(self):
+        print(" The green text on the screen of the terminal lights up, and"+\
+              " a lign of complete gibberish appears. You hit 'enter' and "+\
+              "the following appears:\n")
+        file = open('mapfile.txt','r')
+        print(file.read())

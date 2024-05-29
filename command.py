@@ -94,14 +94,15 @@ def grab(obj):
         print(" That doesn't exist in this room.")
 
 
-    def use(obj):
-        objfound = False
-        for entity in inventory:
-            if entity.name == obj and not objfound:
-                entity.func()
-                objfound = True
-        for entity in entitylist:
-            if entity.name == obj and not objfound and entity.pos == \
-            playerpos:
-                entity.func()
-                objfound = True
+def use(obj):
+    print('using')
+    objfound = False
+    for entity in inventory:
+        if entity.name == obj and not objfound:
+            entity.func()
+            objfound = True
+    for entity in entitylist:
+        if entity.name == obj and not objfound and entity.position == \
+        playerpos:
+            entity.func()
+            objfound = True
