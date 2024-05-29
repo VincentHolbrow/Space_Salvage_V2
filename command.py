@@ -14,7 +14,8 @@ inventory = []
 entitylist = [
     entity.Entity((2,0),'abomination'),
     entity.Entity((0,2), 'raygun'),
-    entity.Entity((0,1), 'terminal')
+    entity.Entity((0,1), 'terminal'),
+    entity.Entity((1,0), 'security door')
     ]
 
 
@@ -97,16 +98,16 @@ def grab(obj):
 
 
 def use(obj):
-    print('using')
+    #print('using')
     objfound = False
     for entity in inventory:
         if entity.name == obj and not objfound:
-            entity.func()
+            entity.func(entitylist, playerpos)
             objfound = True
     for entity in entitylist:
         if entity.name == obj and not objfound and entity.position == \
         playerpos:
-            entity.func()
+            entity.func(entitylist, playerpos)
             objfound = True
 
 
