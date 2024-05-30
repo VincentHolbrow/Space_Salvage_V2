@@ -11,11 +11,13 @@ import entity
 movedirs = {'n':(0,-1),'s':(0,1),'e':(1,0),'w':(-1,0)}
 playerpos = 0,0
 inventory = []
+stopgame = False
 entitylist = [
     entity.Entity((2,0),'abomination'),
     entity.Entity((0,2), 'raygun'),
     entity.Entity((0,1), 'terminal'),
-    entity.Entity((1,0), 'security door')
+    entity.Entity((1,0), 'security door'),
+    entity.Entity((1,1), 'flight controls')
     ]
 
 

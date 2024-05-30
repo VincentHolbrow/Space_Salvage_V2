@@ -1,4 +1,5 @@
 import command
+import entity
 
 '''
 This program contains the main game loop for Space Salvage
@@ -19,3 +20,5 @@ run = True
 while run:
     print('----------------------------------------')
     command.get_input()
+    if command.stopgame == True:
+        run = False

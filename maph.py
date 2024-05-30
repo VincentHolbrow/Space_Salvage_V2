@@ -37,9 +37,12 @@ tiletypes = {
             ' There is an exit to the North.'
     },
     '3':{
-        'exits':['n','w'],
-        'desc':' Cold steel walls form a cube around you.\n'
-            ' There are doorways to the North and West.'
+        'exits':[],
+        'desc':' A reinforced glass canopy grants view of Station XT-16,'
+        ' your destination.\n The various levers, dials, and switches are'
+        ' entirely familiar;\n the control scheme is identical to that of'
+        " your skiff.\n Piloting this ship shouldn't be an issue."
+
     },
     '4':{
         'exits':['e','w'],

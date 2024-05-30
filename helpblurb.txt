@@ -7,3 +7,4 @@ s/south: move character south
 w/west: move character west
 i/inspect: examine an item, object, or creature for more details
 u/use: use an item or object in player inventory or environment
+q/quit: exit the game
